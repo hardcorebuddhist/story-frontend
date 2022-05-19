@@ -24,15 +24,15 @@ export const userSlice = createSlice({
       state.profile = action.payload.user;
       state.space = action.payload.space;
     },
-    spaceUpdated: (state, action) => {
-      state.space = { ...action.payload, stories: state.space.stories };
-    },
     storyDeleteSuccess: (state, action) => {
       const storyId = action.payload;
       state.space.stories = state.space.stories.filter((s) => s.id !== storyId);
     },
     storyPostSuccess: (state, action) => {
       state.space.stories.push(action.payload);
+    },
+    spaceUpdated: (state, action) => {
+      state.space = { ...action.payload, stories: state.space.stories };
     },
   },
 });

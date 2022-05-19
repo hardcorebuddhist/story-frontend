@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Space from "../../components/Space/Space";
 import StoryCarousel from "../../components/StoryCarousel/StoryCarousel";
 import StoryForm from "./StoryForm";
+import MySpaceForm from "./MySpaceForm";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectUser,
@@ -46,6 +47,19 @@ export default function MySpace() {
         {displayButtons ? (
           <Card>
             <Button
+              style={{
+                backgroundColor: space.backgroundColor,
+                color: space.color,
+              }}
+              onClick={() => setEditMode(!editMode)}
+            >
+              {editMode ? "Close" : "Edit my space"}
+            </Button>
+            <Button
+              style={{
+                backgroundColor: space.backgroundColor,
+                color: space.color,
+              }}
               onClick={() => setpostStoryMode(!postStoryMode)}
               className="mt-2"
             >
@@ -53,6 +67,13 @@ export default function MySpace() {
             </Button>
           </Card>
         ) : null}
+
+        {editMode && (
+          <Card>
+            <MySpaceForm />
+          </Card>
+        )}
+
         {postStoryMode && (
           <Card>
             <StoryForm />
