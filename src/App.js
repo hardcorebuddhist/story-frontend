@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import HomePage from "./pages/Homepage/HomePage";
 import SpaceDetails from "./pages/SpaceDetails/SpaceDetails";
+import MySpacePage from "./pages/MySpace/MySpacePage";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
@@ -19,11 +20,11 @@ import HeroBanner from "./components/HeroBanner";
 //     <h1>Home</h1>
 //   </HeroBanner>
 // );
-const Other = () => (
-  <HeroBanner>
-    <h1>Other</h1>
-  </HeroBanner>
-);
+// const Other = () => (
+//   <HeroBanner>
+//     <h1>Other</h1>
+//   </HeroBanner>
+// );
 
 function App() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/spaces/:id" element={<SpaceDetails />} />
-        <Route path="/other" element={<Other />} />
+        <Route path="/myspace" element={<MySpacePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>

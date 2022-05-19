@@ -15,14 +15,22 @@ export default function Navigation() {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand as={NavLink} to="/">
-        YOUR PROJECT NAME
+      <Navbar.Brand
+        as={NavLink}
+        to="/"
+        style={{
+          color: "purple",
+          marginLeft: 20,
+          fontSize: 30,
+        }}
+      >
+        SPACE-X
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
           <NavbarItem path="/" linkText="Home" />
-          <NavbarItem path="/other" linkText="Other" />
+          <NavbarItem path="/myspace" linkText="My space" />
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>
