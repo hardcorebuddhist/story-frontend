@@ -33,7 +33,7 @@ export default function StoryCarousel(props) {
             >
               <h3>{story.name}</h3>
               <p>{story.content}</p>
-              {props.owner && (
+              {props.space && (
                 <Button variant="danger" onClick={() => onDelete(story.id)}>
                   Delete story
                 </Button>
