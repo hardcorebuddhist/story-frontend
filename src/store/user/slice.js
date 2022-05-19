@@ -22,10 +22,24 @@ export const userSlice = createSlice({
     },
     tokenStillValid: (state, action) => {
       state.profile = action.payload.user;
+      state.space = action.payload.space;
+    },
+    spaceUpdated: (state, action) => {
+      state.space = { ...action.payload, stories: state.space.stories };
+    },
+    storyDeleteSuccess: (state, action) => {
+      const storyId = action.payload;
+      state.space.stories = state.space.stories.filter((s) => s.id !== storyId);
     },
   },
 });
 
-export const { loginSuccess, logOut, tokenStillValid } = userSlice.actions;
+export const {
+  loginSuccess,
+  logOut,
+  tokenStillValid,
+  spaceUpdated,
+  storyDeleteSuccess,
+} = userSlice.actions;
 
 export default userSlice.reducer;
