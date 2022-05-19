@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Space from "../../components/Space/Space";
-// import StoryCarousel from "../../components/StoryCarousel";
-// import Container from "react-bootstrap/Container";
+import StoryCarousel from "../../components/StoryCarousel/StoryCarousel";
+import Container from "react-bootstrap/Container";
 import Loading from "../../components/Loading";
 import { fetchSpaceById } from "../../store/space/actions";
 import { selectSpaceDetails } from "../../store/space/selector";
@@ -22,16 +22,21 @@ export default function SpaceDetails() {
   return (
     <>
       <Space
+        style={{
+          backgroundColor: "black",
+          color: space.color,
+        }}
         id={space.id}
         title={space.title}
         description={space.description}
         backgroundColor={space.backgroundColor}
         color={space.color}
         showLink={false}
+        storyname={space.story}
       />
-      {/* <Container>
+      <Container>
         <StoryCarousel space={space} />
-      </Container> */}
+      </Container>
     </>
   );
 }
