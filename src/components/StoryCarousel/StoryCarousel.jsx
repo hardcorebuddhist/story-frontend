@@ -24,11 +24,11 @@ export default function StoryCarousel(props) {
               />
             )}
             <Carousel.Caption
+              className="p-5"
               style={{
                 backgroundColor: `${props.space.backgroundColor}`,
                 color: props.space.color,
               }}
-              className="p-5"
             >
               <h3>{story.name}</h3>
               <p>{story.content}</p>
